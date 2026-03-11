@@ -1,0 +1,7 @@
+#ajouter __pycache__/
+#ajouter .vscode/
+__pycache__/
+*.py[cod]
+*$py.class
+
+models/__pycache__/

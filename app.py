@@ -8,6 +8,8 @@ from flask_bcrypt import Bcrypt
 from routes.nba_routes import nba_bp
 from routes.tennis_routes import tennis_bp
 from routes.user_routes import user_bp
+from routes.user_tennis_profile_routes import user_tennis_profile_bp
+from routes.user_tennis_match_routes import user_tennis_match_bp
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -24,6 +26,8 @@ with app.app_context():
 app.register_blueprint(nba_bp, url_prefix="/api/nba")
 app.register_blueprint(tennis_bp, url_prefix="/api/tennis")
 app.register_blueprint(user_bp, url_prefix="/api/users")
+app.register_blueprint(user_tennis_profile_bp, url_prefix="/api/user-tennis-profile")
+app.register_blueprint(user_tennis_match_bp, url_prefix="/api/user-tennis-match")
 
 @app.route("/")
 def home():
